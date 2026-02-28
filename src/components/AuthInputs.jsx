@@ -9,10 +9,6 @@ const ControlContainer = styled.div`
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 `;
-
-
-
-
 //tagged templates
 
 export default function AuthInputs() {
@@ -38,26 +34,22 @@ export default function AuthInputs() {
   return (
     <div id="auth-inputs">
       <ControlContainer>
-        <p>
-          <Label $invalid={emailNotValid}>Email</Label>
           <Input
             type="email"
-             $invalid={emailNotValid}
+            invalid={emailNotValid}
+            label="Email"
             className={emailNotValid ? "invalid" : undefined}
             onChange={(event) => handleInputChange("email", event.target.value)}
           />
-        </p>
-        <p>
-          <Label $invalid={passwordNotValid}>Password</Label>
           <Input
-            $invalid={passwordNotValid}
+            invalid={passwordNotValid}
+            label="Password"
             type="password"
             className={passwordNotValid ? "invalid" : undefined}
             onChange={(event) =>
               handleInputChange("password", event.target.value)
             }
-          />
-        </p>
+          />  
       </ControlContainer>
       <div className="actions">
         <button type="button" className="text-button">
